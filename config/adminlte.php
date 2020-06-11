@@ -126,7 +126,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-white-primary elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -232,7 +232,7 @@ return [
 
     'menu' => [
         [
-            'text' => 'search',
+            'text' => 'Buscar',
             'search' => true,
             'topnav' => true,
         ],
@@ -242,76 +242,47 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'header' => 'CIUDADANO',
+            'can' => 'ciudadano',
         ],
-        ['header' => 'account_settings'],
         [
             'text' => 'profile',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'can' => 'ciudadano',
         ],
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
+            'can' => 'ciudadano',
             'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
                 [
                     'text' => 'level_one',
                     'url'  => '#',
                 ],
             ],
         ],
-        ['header' => 'labels'],
+        [
+            'header' => 'REVISOR',
+            'can' => 'revisor',
+        ],
         [
             'text'       => 'important',
             'icon_color' => 'red',
             'url'        => '#',
+            'can' => 'revisor',
         ],
         [
             'text'       => 'warning',
             'icon_color' => 'yellow',
             'url'        => '#',
+            'can' => 'revisor',
         ],
         [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
+            'can' => 'revisor',
         ],
     ],
 
