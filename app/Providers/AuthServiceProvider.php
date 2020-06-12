@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('revisor', function ($user){
-            if($user->hasRole('revisor')){
+            if($user->hasRole('revisor')) {
                 return true;
             }else{
                 return false;
@@ -34,7 +34,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('ciudadano', function ($user){
-            if($user->hasRole('ciudadano')){
+            if($user->hasRole('ciudadano')) {
                 return true;
             }else{
                 return false;

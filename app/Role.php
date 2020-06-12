@@ -1,10 +1,8 @@
-<?php
-
-namespace App;
+<?php namespace App;
 
 use Laratrust\Models\LaratrustRole;
 
 class Role extends LaratrustRole
 {
-    public $guarded = [];
+    //public $guarded = [];
 }
