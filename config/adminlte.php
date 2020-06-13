@@ -241,7 +241,7 @@ return [
                 [
                     'text'       => 'Listado Citas',
                     'icon_color' => 'red',
-                    'url'        => 'listadoCitas',
+                    'route' => 'listadoCitas',
                 ],
             ],
         ],
