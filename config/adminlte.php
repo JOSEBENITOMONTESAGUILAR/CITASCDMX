@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b class="text-primary">V-</b><l class="text-primary">PARQUIMETROS</l>',
-    'logo_img' => 'vendor/adminlte/dist/img/LogoParquimetro.png',
+    'logo' => '<l class="text-primary">CITAS</l><b class="text-primary">CDMX</b>',
+    'logo_img' => 'vendor/adminlte/dist/img/citasCDMX.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
