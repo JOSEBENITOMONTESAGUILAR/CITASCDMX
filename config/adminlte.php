@@ -235,25 +235,9 @@ return [
             'header' => 'REVISOR',
         ],
         [
-            'text'    => 'AGENDA CITAS',
+            'text'    => 'Citas',
             'icon' => 'fas fa-fw fa-user',
-            'submenu' => [
-                [
-                    'text'       => 'important',
-                    'icon_color' => 'red',
-                    'route'  => 'listado',
-                ],
-                [
-                    'text'       => 'warning',
-                    'icon_color' => 'yellow',
-                    'route'  => 'listado',
-                ],
-                [
-                    'text'       => 'information',
-                    'icon_color' => 'cyan',
-                    'route'  => 'listado',
-                ],
-            ],
+            'route'  => 'listado'
         ],
     ],
 

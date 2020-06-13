@@ -19,7 +19,7 @@
 
             <div class="card-body">
                 <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
-                    <li class="nav-item bg-secondary text-white">
+                    <li class="nav-item">
                       <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Registrar Cita</a>
                     </li>
                     <li class="nav-item">

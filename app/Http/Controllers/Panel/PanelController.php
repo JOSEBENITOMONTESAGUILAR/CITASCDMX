@@ -10,4 +10,8 @@ class PanelController extends Controller
     public function home(){
         return view('home');
     }
+
+    public function listado(){
+        return view('panel.listado');
+    }
 }

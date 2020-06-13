@@ -1,18 +1,11 @@
 <?php
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::view('/', 'citas.bienvenida')->name('bienvenida');
 
 Auth::routes();
 
-Route::get('/home', function ()
-{
-    $user = Auth::user();
-    if(is_null($user))
-    {
-        return view('auth.login');
-    }
-    else
-    {
-        return view('home');
-    }
-})->name('home');
+Route::namespace('Panel')->group(function () {
+    Route::get('/home', 'PanelController@home')->name('home');
+    Route::get('/listado', 'PanelController@listado')->name('listado');
+});
+
