@@ -241,17 +241,17 @@ return [
                 [
                     'text'       => 'important',
                     'icon_color' => 'red',
-                    'route'  => 'listado',
+                    'url'        => 'listadoCitas',
                 ],
                 [
                     'text'       => 'warning',
                     'icon_color' => 'yellow',
-                    'route'  => 'listado',
+                    'url'        => '#',
                 ],
                 [
                     'text'       => 'information',
                     'icon_color' => 'cyan',
-                    'route'  => 'listado',
+                    'url'        => '#',
                 ],
             ],
         ],
