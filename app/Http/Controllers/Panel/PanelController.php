@@ -14,4 +14,10 @@ class PanelController extends Controller
     public function listado(){
         return view('panel.listado');
     }
+
+    public function informacion($id_persona)
+    {
+        dd(1234);
+        return view('panel.informacion');
+    }
 }
