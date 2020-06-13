@@ -237,13 +237,7 @@ return [
         [
             'text'    => 'AGENDA CITAS',
             'icon' => 'fas fa-fw fa-user',
-            'submenu' => [
-                [
-                    'text'       => 'Listado Citas',
-                    'icon_color' => 'red',
-                    'route' => 'listadoCitas',
-                ],
-            ],
+            'route' => 'listadoCitas',
         ],
     ],
 
