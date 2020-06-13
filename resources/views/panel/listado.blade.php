@@ -11,8 +11,38 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header text-center"><i class="fas fa-clipboard"></i> Listado</div>
+                    <div class="card-header text-center"><i class="fas fa-list-ul"></i> Citas</div>
 
+                    <div class="card-body text-center">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
+                        <div class="container text-center">
+                            <table class="table text-center">
+                                <thead class="thead-light text-center">
+                                <tr role="row" class="text-center">
+                                    <th scope="col">#</th>
+                                    <th scope="col">NOMBRE</th>
+                                    <th scope="col">CURP</th>
+                                    <th scope="col">ACCION</th>
+                                </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>JOSE BENITO</td>
+                                    <td>MOAB941212HMCNGN04</td>
+                                    <td>
+                                        <a href="" class="btn btn-outline-secondary btn-block">VER INFORMACION</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
