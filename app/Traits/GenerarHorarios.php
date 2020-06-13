@@ -15,7 +15,7 @@ trait GenerarHorarios
     {
         $dias_disponibles = array();
         $modulo = $this->modulos()->getHorario($id_modulo);
-
+        dd($modulo);
         foreach ($modulo['horarios'] as $horario)
         {
             $fecha_tramites_inicio = now()->copy()->addDay(1);

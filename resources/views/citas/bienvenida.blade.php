@@ -31,8 +31,11 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="list-group list-group-flush">
-                                            <a href="{{ route('registro') }}" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                                            <a href="{{ route('registro') }}" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                                             @if(isset($tramites))
+                                                @foreach($tramites as $tramite)
+                                                    <a href="{{ route('registro', $tramite->name) }}" class="list-group-item list-group-item-action">{{ $tramite->description }}</a>
+                                                @endforeach
+                                            @endif
                                         </div>
                                     </div>
                                   </div>

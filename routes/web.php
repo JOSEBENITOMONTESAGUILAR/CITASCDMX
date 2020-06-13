@@ -4,7 +4,8 @@ Auth::routes();
 
 Route::namespace('Citas')->group(function () {
     Route::get('/', 'CitasController@bienvenida')->name('bienvenida');
-    Route::get('registro', 'AgendarController@registro')->name('registro');
+    Route::get('registro/{tramite}', 'AgendarController@registro')->name('registro');
+    Route::post('horario/{tramite}', 'AgendarController@horario')->name('horario');
 });
 
 Route::namespace('Panel')->group(function () {
