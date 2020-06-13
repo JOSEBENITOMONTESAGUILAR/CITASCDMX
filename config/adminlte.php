@@ -232,52 +232,28 @@ return [
 
     'menu' => [
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'header' => 'REVISOR',
         ],
         [
-            'header' => 'CIUDADANO',
-            'can' => 'ciudadano',
-        ],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text'    => 'AGENDA CITAS',
             'icon' => 'fas fa-fw fa-user',
-            'can' => 'ciudadano',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'can' => 'ciudadano',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text'       => 'important',
+                    'icon_color' => 'red',
+                    'url'        => '#',
+                ],
+                [
+                    'text'       => 'warning',
+                    'icon_color' => 'yellow',
+                    'url'        => '#',
+                ],
+                [
+                    'text'       => 'information',
+                    'icon_color' => 'cyan',
+                    'url'        => '#',
                 ],
             ],
-        ],
-        [
-            'header' => 'REVISOR',
-            'can' => 'revisor',
-        ],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-            'can' => 'revisor',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-            'can' => 'revisor',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-            'can' => 'revisor',
         ],
     ],
 
