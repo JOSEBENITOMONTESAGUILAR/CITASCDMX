@@ -239,19 +239,9 @@ return [
             'icon' => 'fas fa-fw fa-user',
             'submenu' => [
                 [
-                    'text'       => 'important',
+                    'text'       => 'Listado Citas',
                     'icon_color' => 'red',
                     'url'        => 'listadoCitas',
-                ],
-                [
-                    'text'       => 'warning',
-                    'icon_color' => 'yellow',
-                    'url'        => '#',
-                ],
-                [
-                    'text'       => 'information',
-                    'icon_color' => 'cyan',
-                    'url'        => '#',
                 ],
             ],
         ],
