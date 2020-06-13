@@ -16,7 +16,3 @@ Route::get('/home', function ()
         return view('home');
     }
 })->name('home');
-
-Route::prefix('Administrador')->namespace('Administrador')->group(function (){
-    Route::get('/','administradorController@listadoCitas')->name('listadoCitas');
-});
