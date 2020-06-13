@@ -29,17 +29,11 @@
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                 <div class="row">
-                                    <div class="col-4">
-                                      <div class="list-group" id="list-tab" role="tablist">
-                                        <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Licencias</a>
-                                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Vehicular</a>
-                                      </div>
-                                    </div>
-                                    <div class="col-8">
-                                      <div class="tab-content" id="nav-tabContent">
-                                        <div class="tab-pane fade" id="list-home" role="tabpanel" aria-labelledby="list-home-list"></div>
-                                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"></div>
-                                      </div>
+                                    <div class="col-md-12">
+                                        <div class="list-group list-group-flush">
+                                            <a href="{{ route('registro') }}" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                                            <a href="{{ route('registro') }}" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                                        </div>
                                     </div>
                                   </div>
                             </div>
