@@ -51,7 +51,7 @@ return [
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'AdminLTE',
-
+    'route' => '/',
     /*
     |--------------------------------------------------------------------------
     | User Menu
@@ -241,17 +241,17 @@ return [
                 [
                     'text'       => 'important',
                     'icon_color' => 'red',
-                    'url'        => '#',
+                    'route'  => 'listado',
                 ],
                 [
                     'text'       => 'warning',
                     'icon_color' => 'yellow',
-                    'url'        => '#',
+                    'route'  => 'listado',
                 ],
                 [
                     'text'       => 'information',
                     'icon_color' => 'cyan',
-                    'url'        => '#',
+                    'route'  => 'listado',
                 ],
             ],
         ],
