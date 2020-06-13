@@ -19,10 +19,6 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <b>Aquí podrás visualizar el registro de las citas, y administrar las asistencias de cada una.</b>
-                        <div align="center">
-                            <img src="vendor/adminlte/dist/img/CDMXL.png" alt="Image" class="center" height="500" width="500">
-                        </div>
                     </div>
                 </div>
             </div>
