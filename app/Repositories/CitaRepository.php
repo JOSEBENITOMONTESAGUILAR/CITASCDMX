@@ -34,17 +34,9 @@ class CitaRepository extends Repository
             ->where('estatus',1)->count();
     }
 
-    public function getCitaPrevia($placa, $folio)
+    public function getActivas()
     {
-        $r = $this->model->where("placa", $placa)
-            ->where("folio_documental", $folio)
-            ->where('estatus',1)->first();
-
-        if (!is_null($r)) {
-            return $r;
-        } else {
-            return false;
-        }
+        return $this->model->where('estatus',1)->get();
     }
 
     public function getCitaFechasOcupadas($id_modulo, $fecha)
@@ -78,6 +70,23 @@ class CitaRepository extends Repository
         }
     }
 
+    public function asistencia($id)
+    {
+        try{
+            $cita = $this->model->where('id_cita',$id)->first();
+
+            $estatus = $cita->update(["estatus" => 3]);
+
+            if($cita instanceof citaModel and $estatus === true){
+                return $cita;
+            }
+
+            return false;
+        }catch (\Exception $exception){
+            return false;
+        }
+    }
+
     public function reagendar($id)
     {
         try{
@@ -85,7 +94,7 @@ class CitaRepository extends Repository
 
             $estatus = $cita->update(["estatus" => 2]);
 
-            if($cita instanceof Cita and $estatus === true){
+            if($cita instanceof citaModel and $estatus === true){
                 return $cita;
             }
 
@@ -93,23 +102,5 @@ class CitaRepository extends Repository
         }catch (\Exception $exception){
             return $exception->getMessage();
         }
-    }
-
-    public function maximoCitasPorCurp($placa, $folio){
-
-        $db_ruta = DB::connection('ruta_2020')->getDatabaseName();
-        $db_citas = DB::connection('mysql')->getDatabaseName();
-
-        return DB::select("SELECT dg.placa, pt.curp_rfc, ct.fecha_cita from ".$db_ruta.".datos_generales dg
-                    join ".$db_ruta.".propietario  pt on dg.propietario_id = pt.id_propietario
-                    join ".$db_ruta.".estatus es on dg.id_datos_generales = es.datos_generales_id
-                    join ".$db_citas.".cita ct on es.id_estatus = ct.folio_documental
-                    where ct.estatus = 1
-                    and pt.id_propietario in (
-                        SELECT propietario_id from ".$db_ruta.".datos_generales dg
-                        join ".$db_ruta.".estatus es on dg.id_datos_generales = es.datos_generales_id
-                        where dg.placa = '".$placa."' and es.id_estatus = '".$folio."'
-                    )"
-                );
     }
 }

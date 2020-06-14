@@ -11,7 +11,7 @@ Route::namespace('Citas')->group(function () {
 
 Route::namespace('Panel')->group(function () {
     Route::get('/home', 'PanelController@home')->name('home');
-    Route::get('/listado', 'PanelController@listado')->name('listado');
-    Route::get('listado/informacion/{id}', 'PanelController@informacion')->name('informacion');
+    Route::get('/listado', 'RevisorController@listado')->name('listado');
+    Route::get('asistencia/{id}', 'RevisorController@asistencia')->name('informacion');
 });
 
