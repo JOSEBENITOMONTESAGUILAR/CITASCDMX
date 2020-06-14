@@ -16,7 +16,8 @@ class ConsultaController extends Controller
         if($cita instanceof citaModel){
             return view('citas.consulta')->with('cita',$cita);
         }else{
-            return view('citas.bienvenida')->withErrors(['creo' => 3]);
+            $tramites = $this->tramite()->all();
+            return view('citas.bienvenida')->with('tramites',$tramites)->withErrors(['creo' => 3]);
         }
     }
 }
