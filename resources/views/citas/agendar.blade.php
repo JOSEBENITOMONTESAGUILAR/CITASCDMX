@@ -25,11 +25,11 @@
                     @csrf
                     <div class="form-group">
                         <label>Placa</label>
-                        <input type="text" class="form-control" name="numeroCita" placeholder="Ingresa aquí" required>
+                        <input type="text" class="form-control" name="placa" placeholder="Ingresa aquí" required>
                     </div>
                     <div class="form-group">
                         <label>Curp</label>
-                        <input type="text" class="form-control" name="confirmacionCita" placeholder="Ingresa aquí" required>
+                        <input type="text" class="form-control" name="curp" placeholder="Ingresa aquí" required>
                     </div>
 
                 </form>

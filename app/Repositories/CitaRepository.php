@@ -13,16 +13,11 @@ class CitaRepository extends Repository
         return citaModel::class;
     }
 
-    public function getCitaEstatus($placa, $folio, $estatus = 1)
+    public function getCita($placa, $curp, $estatus = 1)
     {
         $cita = $this->model->where('placa', $placa)
-            ->where("folio_documental", $folio);
-
-        if($estatus != null){
-            $cita = $cita->where('estatus',$estatus);
-        }
-
-        $cita = $cita->orderBy('created_at','desc')->first();
+            ->where("curp", $curp)
+            ->where('estatus',1)->first();
 
         if(is_null($cita)){
             return false;
@@ -31,25 +26,6 @@ class CitaRepository extends Repository
         return $cita;
     }
 
-    public function getCitasEstatus($placa, $folio, $estatus = 1)
-    {
-        $cita =  $this->model->where('placa', $placa)
-            ->where("folio_documental", $folio)
-            ->where('estatus',$estatus)->get();
-
-        if(is_null($cita) or (is_array($cita) and count($cita) <= 0)){
-            return false;
-        }
-
-        return $cita;
-    }
-
-    public function getCitaFecha($modulo, $fecha)
-    {
-        return $this->model->whereDate('fecha_cita', $fecha)
-            ->where("modulo_id", $modulo)
-            ->where('estatus',1)->orderBy('created_at','desc')->first();
-    }
 
     public function getDisponibilidad($modulo, $fecha)
     {
@@ -85,16 +61,17 @@ class CitaRepository extends Repository
         return $fechas;
     }
 
-    public function crearCita($placa, $folio, $modulo,$ip, $fechaCita)
+    public function crearCita($placa,$curp,$tramite_id,$modulo_id,$fecha)
     {
         try{
             return $this->model->create([
-                'folio_documental' => $folio,
                 'placa' => $placa,
-                'modulo_id' => $modulo,
-                'fecha_cita' => $fechaCita,
+                'curp' => $curp,
+                'tramite_id' => $tramite_id,
+                'modulo_id' => $modulo_id,
+                'fecha_cita' => $fecha,
                 'estatus' => 1,
-                'ip' => $ip
+                'ip' => request()->getClientIp()
             ]);
         }catch (\Exception $exception){
             return $exception->getMessage();
