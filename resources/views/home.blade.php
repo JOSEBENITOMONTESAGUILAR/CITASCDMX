@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="card animate__animated animate__fadeInDownBig animate__delay-1s">
+                <div class="card animate__animated animate__rotateIn animate__delay-1s">
                     <div class="card-header text-center"><i class="fas fa-clipboard"></i> BIENVENIDO</div>
 
                     <div class="card-body text-center">
