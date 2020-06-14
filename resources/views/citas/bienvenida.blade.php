@@ -30,6 +30,27 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+        @elseif($errors->any() and $errors->all()[0] == 3)
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>¡Adertencia!</strong> La cita que intenta buscar no existe.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @elseif($errors->any() and $errors->all()[0] == 4)
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>¡Exito!</strong> La cita se reagendo correctamente.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @elseif($errors->any() and $errors->all()[0] == 5)
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>¡Error!</strong> La cita no se reagendo correctamente.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         @endif
 
         <div class="card">
@@ -64,15 +85,15 @@
                                   </div>
                             </div>
                             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                <form action="{{ url('consultar.show') }}" method="post">
+                                <form action="{{ url('consulta') }}" method="post">
                                     @csrf
                                     <div class="form-group">
-                                        <label>Número de cita</label>
-                                        <input type="text" class="form-control" name="numeroCita" placeholder="Ingresa aquí" required>
+                                        <label>PLACA:</label>
+                                        <input type="text" class="form-control" name="placa" placeholder="Ingresa aquí" required>
                                     </div>
                                     <div class="form-group">
-                                        <label>Número de confirmación</label>
-                                        <input type="text" class="form-control" name="confirmacionCita" placeholder="Ingresa aquí" required>
+                                        <label>CURP:</label>
+                                        <input type="text" class="form-control" name="curp" placeholder="Ingresa aquí" required>
                                     </div>
                                     <button type="submit" class="btn btn-lg btn-secondary">Consultar/Cancelar cita</button>
                                 </form>

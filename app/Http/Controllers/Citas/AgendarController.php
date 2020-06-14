@@ -59,4 +59,13 @@ class AgendarController extends Controller
             return view('citas.bienvenida')->withErrors(['creo' => 2]);
         }
     }
+
+    public function reagendar($id){
+        $cita = $this->cita()->reagendar($id);
+        if($cita instanceof citaModel){
+            return view('citas.bienvenida')->withErrors(['creo' => 4]);
+        }else{
+            return view('citas.bienvenida')->withErrors(['creo' => 5]);
+        }
+    }
 }
