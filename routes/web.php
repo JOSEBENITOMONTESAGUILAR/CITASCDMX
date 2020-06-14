@@ -9,6 +9,7 @@ Route::namespace('Citas')->group(function () {
     Route::get('reagendar/{id}', 'AgendarController@reagendar')->name('reagendar');
     Route::post('horario/{tramite}', 'AgendarController@horario')->name('horario');
     Route::post('guardar', 'AgendarController@guardar')->name('guardar');
+    Route::get('comprobante/{id}', 'AgendarController@comprobante')->name('comprobante');
 });
 
 Route::namespace('Panel')->group(function () {

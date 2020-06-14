@@ -103,4 +103,14 @@ class CitaRepository extends Repository
             return $exception->getMessage();
         }
     }
+
+    public function comprobante($id)
+    {
+        try{
+            $cita = $this->model->where('id_cita',$id)->first();
+            return $cita;
+        }catch (\Exception $exception){
+            return $exception->getMessage();
+        }
+    }
 }

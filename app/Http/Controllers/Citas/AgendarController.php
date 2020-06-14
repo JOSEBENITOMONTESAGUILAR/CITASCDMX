@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\citaModel;
 use App\Traits\CitasRepositories;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
+use SimpleSoftwareIO\QrCode\Facades\QrCode as QrCode;
 
 class AgendarController extends Controller
 {
@@ -67,5 +69,14 @@ class AgendarController extends Controller
         }else{
             return view('citas.bienvenida')->withErrors(['creo' => 5]);
         }
+    }
+
+    public function comprobante($id)
+    {
+        $cita = $this->cita()->comprobante($id);
+        $cadena_qr = 'CURP : '. $cita['curp']. "\n" . 'PLACA : '. $cita['placa']. "\n". 'FECHA CITA : '.$cita['fecha_cita']. "\n";
+        $qrcode = base64_encode(QrCode::format('png')->size(100)->margin(0)->generate($cadena_qr));
+        $pdfSis = PDF::loadView('citas.comprobante', compact('cita','qrcode'));
+        return $pdfSis->download('Constancia_de_Registro_cita_'.$cita['curp'].'.pdf');
     }
 }

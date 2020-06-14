@@ -14,7 +14,6 @@
             </div>
 
             <div class="card-body">
-                <p class="card-text">Ingrese los datos indicados.
             </div>
 
             <div class="card-body">
@@ -40,7 +39,7 @@
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <a href="{{ url('/') }}" class="btn btn-secondary">Regresar</a>
                     <a href="{{ route('reagendar', $cita->id_cita) }}" class="btn btn-danger">Re-agendar</a>
-                    <button type="submit" class="btn btn-success">Comprobante</button>
+                    <a href="{{ route('comprobante', $cita->id_cita) }}" class="btn btn-success">Comprobante</a>
                 </div>
             </div>
 
