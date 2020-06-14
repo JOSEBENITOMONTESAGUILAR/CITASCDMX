@@ -13,7 +13,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h1 class="card-title font-weight-bold">Solicitud de citas</h1>
+                <h3 class="card-title font-weight-bold">Agendar citas</h3>
             </div>
 
             <div class="card-body">

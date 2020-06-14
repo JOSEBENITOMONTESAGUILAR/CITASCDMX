@@ -11,7 +11,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h1 class="card-title font-weight-bold">Solicitud de citas</h1>
+                <h3 class="card-title font-weight-bold">Solicitud de citas</h3>
             </div>
             <div class="card-body">
                 <p class="card-text">Bienvenido al sistema de <strong>citas en Linea</strong>.
