@@ -9,21 +9,21 @@
 @section('content')
     <div class="container">
 
-        @if($errors->any() and $errors->has('creo') == 0)
+        @if($errors->any() and $errors->all()[0] == 0)
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <strong>¡Advertencia!</strong> Su cita ya existe.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-        @elseif($errors->any() and $errors->has('creo') == 1)
+        @elseif($errors->any() and $errors->all()[0] == 1)
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>¡Exito!</strong> La cita se creo correctamente.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-        @elseif($errors->any() and $errors->has('creo') == 2)
+        @elseif($errors->any() and $errors->all()[0] == 2)
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>¡Error!</strong> La cita no se creo.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
