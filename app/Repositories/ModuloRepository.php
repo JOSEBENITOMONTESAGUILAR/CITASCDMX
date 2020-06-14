@@ -43,17 +43,13 @@ class ModuloRepository extends Repository
             $horarios[$i]['mes_descricion'] = $modulo->meses()->get()[$i]['descripcion'];
             $horarios[$i]['dia_inicio'] = $modulo->dias()->get()[$i]['dia_inicio'];
             $horarios[$i]['dia_final'] = $modulo->dias()->get()[$i]['dia_final'];
-            $horarios[$i]['dia_limite_citas'] = $modulo->dias()->get()[$i]['maximo_citas'];
             $horarios[$i]['dia_descripcion'] = $modulo->dias()->get()[$i]['descripcion'];
             $horarios[$i]['hora_inicio'] = $modulo->horas()->get()[$i]['hora_inicio'];
             $horarios[$i]['hora_final'] = $modulo->horas()->get()[$i]['hora_final'];
             $horarios[$i]['hora_duracion_citas'] = $modulo->horas()->get()[$i]['duracion_citas'];
-            $horarios[$i]['hora_unidades'] = $modulo->horas()->get()[$i]['unidades'];
-            $horarios[$i]['hora_rango_minutos'] = $modulo->horas()->get()[$i]['rango_minutos'];
-            $horarios[$i]['hora_descripcion'] = $modulo->horas()->get()[$i]['descripcion'];
         }
+
         $modulo['inhabiles'] = $modulo->inhabiles()->get()->toArray();
-        $modulo['especiales'] = $modulo->especiales()->get()->toArray();
         $modulo['horarios'] = $horarios;
         return $modulo;
     }

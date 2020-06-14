@@ -11,7 +11,6 @@ class cat_mesesModel extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'id_cat_mes',
         'dia_mes_inicio',
         'dia_mes_final',
         'descripcion'

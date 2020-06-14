@@ -15,7 +15,7 @@ trait GenerarHorarios
     {
         $dias_disponibles = array();
         $modulo = $this->modulos()->getHorario($id_modulo);
-        dd($modulo);
+
         foreach ($modulo['horarios'] as $horario)
         {
             $fecha_tramites_inicio = now()->copy()->addDay(1);
@@ -56,14 +56,6 @@ trait GenerarHorarios
                         $pos_inhabil = array_search($dia["dia"], array_column($modulo['inhabiles'], 'fecha'));
                         $dia["inhabil"] = true;
                         $dia["inhabil_observacion"] = $modulo['inhabiles'][$pos_inhabil]['observacion'];
-                    }elseif(array_search($dia["dia"], array_column($modulo['especiales'], 'dia')) !== false) {
-                        //dias especiales
-                        $pos_especial = array_search($dia["dia"], array_column($modulo['especiales'], 'dia'));
-                        $dia["especial"] = true;
-                        $dia["especial_observacion"] = $modulo['especiales'][$pos_especial]['observacion'];
-                        $dia["especial_hora_inicio"] = $modulo['especiales'][$pos_especial]['hora_inicio'];
-                        $dia["especial_hora_fin"] = $modulo['especiales'][$pos_especial]['hora_fin'];
-                        $dia["especial_duracion"] = $modulo['especiales'][$pos_especial]['duracion_citas'];
                     }
 
                     $dias_disponibles[] = $dia;
