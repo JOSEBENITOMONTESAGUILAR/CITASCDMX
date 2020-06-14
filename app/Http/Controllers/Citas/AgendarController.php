@@ -15,6 +15,16 @@ class AgendarController extends Controller
     }
 
     public function horario(Request $request, $tramite){
+
+        $cita = $this->cita()->getCita($request->placa, $request->curp);
+
+        if($cita instanceof citaModel){
+            $tramites = $this->tramite()->all();
+            return view('citas.bienvenida')
+                ->with('tramites',$tramites)
+                ->withErrors(['creo' => 0]);
+        }
+
         $modulos = $this->modulos()->all();
         return view('citas.horario')
             ->with('tramite',$tramite)
@@ -27,7 +37,10 @@ class AgendarController extends Controller
         $cita = $this->cita()->getCita($request->placa, $request->curp);
 
         if($cita instanceof citaModel){
-            return view('citas.bienvenida')->withErrors(['creo' => 0]);
+            $tramites = $this->tramite()->all();
+            return view('citas.bienvenida')
+                ->with('tramites',$tramites)
+                ->withErrors(['creo' => 0]);
         }
 
         $tramite = $this->tramite()->findBy('name',$request->tramite);
