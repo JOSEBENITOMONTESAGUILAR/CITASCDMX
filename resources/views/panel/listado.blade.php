@@ -36,7 +36,7 @@
                                     <td>JOSE BENITO</td>
                                     <td>MOAB941212HMCNGN04</td>
                                     <td>
-                                        <a href="{{url('panel/informacion/'.'1')}}" class="btn btn-outline-dark btn-block">VER INFORMACION</a>
+                                        <a href="{{url('panel/informacion/'.'1')}}" class="btn btn-outline-dark btn-block"><i class="fas fa-info-circle"></i> VER INFORMACION</a>
                                     </td>
                                 </tr>
                                 </tbody>
