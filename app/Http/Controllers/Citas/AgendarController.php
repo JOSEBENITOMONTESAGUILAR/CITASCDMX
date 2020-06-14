@@ -35,6 +35,7 @@ class AgendarController extends Controller
 
     public function guardar(Request $request){
         $cita = $this->cita()->getCita($request->placa, $request->curp);
+        $tramites = $this->tramite()->all();
 
         if($cita instanceof citaModel){
             $tramites = $this->tramite()->all();
@@ -54,18 +55,23 @@ class AgendarController extends Controller
         );
 
         if($nuevaCita instanceof citaModel){
-            return view('citas.bienvenida')->withErrors(['creo' => 1]);
+            return view('citas.bienvenida')
+                ->with('tramites',$tramites)->withErrors(['creo' => 1]);
         }else{
-            return view('citas.bienvenida')->withErrors(['creo' => 2]);
+            return view('citas.bienvenida')
+                ->with('tramites',$tramites)->withErrors(['creo' => 2]);
         }
     }
 
     public function reagendar($id){
         $cita = $this->cita()->reagendar($id);
+        $tramites = $this->tramite()->all();
         if($cita instanceof citaModel){
-            return view('citas.bienvenida')->withErrors(['creo' => 4]);
+            return view('citas.bienvenida')
+                ->with('tramites',$tramites)->withErrors(['creo' => 4]);
         }else{
-            return view('citas.bienvenida')->withErrors(['creo' => 5]);
+            return view('citas.bienvenida')
+                ->with('tramites',$tramites)->withErrors(['creo' => 5]);
         }
     }
 }
